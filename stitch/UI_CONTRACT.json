@@ -1,0 +1,368 @@
+[
+  {
+    "screenId": "c5afb21cfe6f4128b6d1b61b1b2e795e",
+    "screenTitle": "Ana Sayfa - Dashboard",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Takip",
+        "href": "#",
+        "line": 104
+      },
+      {
+        "type": "link",
+        "label": "Analiz",
+        "href": "#",
+        "line": 105
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 106
+      },
+      {
+        "type": "link",
+        "label": "Takip",
+        "href": "#",
+        "line": 189
+      },
+      {
+        "type": "link",
+        "label": "Analiz",
+        "href": "#",
+        "line": 193
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 197
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 109
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 112
+      },
+      {
+        "type": "button",
+        "label": "Ekle",
+        "line": 124
+      },
+      {
+        "type": "button",
+        "label": "check",
+        "line": 136
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "check_circle",
+        "line": 154
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "check",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 175
+      },
+      {
+        "type": "input",
+        "label": "Yeni alışkanlık ekle...",
+        "inputType": "text",
+        "placeholder": "Yeni alışkanlık ekle...",
+        "line": 123
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Takip",
+        "href": "#",
+        "line": 104
+      },
+      {
+        "type": "link",
+        "label": "Analiz",
+        "href": "#",
+        "line": 105
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 106
+      },
+      {
+        "type": "link",
+        "label": "Takip",
+        "href": "#",
+        "line": 189
+      },
+      {
+        "type": "link",
+        "label": "Analiz",
+        "href": "#",
+        "line": 193
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 197
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 109
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 112
+      },
+      {
+        "type": "button",
+        "label": "Ekle",
+        "line": 124
+      },
+      {
+        "type": "button",
+        "label": "check",
+        "line": 136
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "check_circle",
+        "line": 154
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "check",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 175
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Yeni alışkanlık ekle...",
+        "inputType": "text",
+        "placeholder": "Yeni alışkanlık ekle...",
+        "line": 123
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 16,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "499c9daeed634e2b95791b46946674eb",
+    "screenTitle": "Boş Durum - Henüz Alışkanlık Yok",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Takip",
+        "href": "#",
+        "line": 96
+      },
+      {
+        "type": "link",
+        "label": "Analiz",
+        "href": "#",
+        "line": 101
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 105
+      },
+      {
+        "type": "link",
+        "label": "Takip",
+        "href": "#",
+        "line": 160
+      },
+      {
+        "type": "link",
+        "label": "Analiz",
+        "href": "#",
+        "line": 165
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 112
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 115
+      },
+      {
+        "type": "button",
+        "label": "Ekle",
+        "line": 133
+      },
+      {
+        "type": "input",
+        "label": "Örn: Sabah Koşusu",
+        "inputType": "text",
+        "placeholder": "Örn: Sabah Koşusu",
+        "line": 131
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 128
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Takip",
+        "href": "#",
+        "line": 96
+      },
+      {
+        "type": "link",
+        "label": "Analiz",
+        "href": "#",
+        "line": 101
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 105
+      },
+      {
+        "type": "link",
+        "label": "Takip",
+        "href": "#",
+        "line": 160
+      },
+      {
+        "type": "link",
+        "label": "Analiz",
+        "href": "#",
+        "line": 165
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 170
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 112
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 115
+      },
+      {
+        "type": "button",
+        "label": "Ekle",
+        "line": 133
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Örn: Sabah Koşusu",
+        "inputType": "text",
+        "placeholder": "Örn: Sabah Koşusu",
+        "line": 131
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 11,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "ce5f6375a00649f6bd5257d28a16329d",
+    "screenTitle": "Silme Onay Modalı",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "İptal",
+        "line": 150
+      },
+      {
+        "type": "button",
+        "label": "Sil",
+        "line": 153
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "İptal",
+        "line": 150
+      },
+      {
+        "type": "button",
+        "label": "Sil",
+        "line": 153
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 2,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
