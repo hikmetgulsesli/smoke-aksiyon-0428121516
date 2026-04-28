@@ -1,0 +1,1032 @@
+{
+  "generatedAt": "2026-04-28T09:22:07.265Z",
+  "screenCount": 3,
+  "screens": {
+    "499c9daeed634e2b95791b46946674eb": {
+      "screenId": "499c9daeed634e2b95791b46946674eb",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "block",
+          "classes": [
+            "w-full",
+            "top-0",
+            "sticky",
+            "z-40",
+            "bg-[#f9f9ff]",
+            "dark:bg-slate-950",
+            "font-['Inter']",
+            "tracking-tight",
+            "text-sm"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "w-full",
+            "max-w-3xl",
+            "mx-auto",
+            "px-6",
+            "py-12",
+            "flex",
+            "flex-col",
+            "pb-32",
+            "md:pb-12"
+          ],
+          "childCount": 6
+        },
+        {
+          "tag": "nav",
+          "layout": "flex-row",
+          "classes": [
+            "md:hidden",
+            "fixed",
+            "bottom-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-around",
+            "items-center",
+            "px-6"
+          ],
+          "childCount": 0
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "hover:text-[#4648d4]",
+            "transition-colors",
+            "duration-300"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "hover:text-[#4648d4]",
+            "transition-colors",
+            "duration-300"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Ekle",
+          "classes": [
+            "w-full",
+            "sm:w-auto",
+            "bg-primary",
+            "text-on-primary",
+            "px-6",
+            "py-3",
+            "rounded-lg",
+            "font-label",
+            "font-semibold",
+            "tracking-wide",
+            "hover:bg-primary-container",
+            "hover:-translate-y-0.5",
+            "transition-all",
+            "duration-200",
+            "shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-2"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Örn: Sabah Koşusu",
+          "placeholder": "Örn: Sabah Koşusu",
+          "name": "habit-name",
+          "classes": [
+            "w-full",
+            "bg-transparent",
+            "border-0",
+            "border-b-2",
+            "border-outline-variant/30",
+            "px-0",
+            "py-2",
+            "text-body-md",
+            "text-on-surface",
+            "focus:ring-0",
+            "focus:border-primary",
+            "transition-colors",
+            "placeholder:text-outline"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Takip",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "task_alt",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "person",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "task_alt",
+        "analytics",
+        "person",
+        "notifications",
+        "settings",
+        "add"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed": "#e1e0ff",
+        "surface-container-low": "#f0f3ff",
+        "on-tertiary-fixed": "#301400",
+        "outline": "#767586",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "on-background": "#111c2d",
+        "surface-variant": "#d8e3fb",
+        "error-container": "#ffdad6",
+        "on-surface-variant": "#464554",
+        "inverse-surface": "#263143",
+        "on-tertiary": "#ffffff",
+        "on-secondary-fixed-variant": "#5516be",
+        "on-primary-container": "#fffbff",
+        "secondary-fixed": "#e9ddff",
+        "on-primary": "#ffffff",
+        "on-error": "#ffffff",
+        "surface": "#f9f9ff",
+        "on-surface": "#111c2d",
+        "on-tertiary-container": "#fffbff",
+        "surface-bright": "#f9f9ff",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-high": "#dee8ff",
+        "secondary": "#6b38d4",
+        "secondary-fixed-dim": "#d0bcff",
+        "on-primary-fixed": "#07006c",
+        "on-secondary-container": "#fffbff",
+        "primary-container": "#6063ee",
+        "primary-fixed-dim": "#c0c1ff",
+        "primary": "#4648d4",
+        "on-error-container": "#93000a",
+        "inverse-on-surface": "#ecf1ff",
+        "tertiary-fixed": "#ffdcc5",
+        "outline-variant": "#c7c4d7",
+        "surface-container": "#e7eeff",
+        "inverse-primary": "#c0c1ff",
+        "tertiary": "#904900",
+        "on-secondary-fixed": "#23005c",
+        "tertiary-fixed-dim": "#ffb783",
+        "surface-tint": "#494bd6",
+        "surface-container-highest": "#d8e3fb",
+        "surface-dim": "#cfdaf2",
+        "tertiary-container": "#b55d00",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed-variant": "#703700",
+        "on-secondary": "#ffffff",
+        "background": "#f9f9ff",
+        "secondary-container": "#8455ef"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "8"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Takip",
+          "icon": "task_alt",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "icon": "person",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Ekle",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "input",
+          "label": "Örn: Sabah Koşusu",
+          "type": "text",
+          "placeholder": "Örn: Sabah Koşusu",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "link",
+          "label": "Takip",
+          "icon": "task_alt",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "icon": "analytics",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "icon": "person",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Takip",
+          "icon": "task_alt",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "icon": "analytics",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "icon": "person",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Boş Durum - Henüz Alışkanlık Yok"
+    },
+    "c5afb21cfe6f4128b6d1b61b1b2e795e": {
+      "screenId": "c5afb21cfe6f4128b6d1b61b1b2e795e",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "block",
+          "classes": [
+            "bg-[#f9f9ff]",
+            "font-['Inter']",
+            "tracking-tight",
+            "text-sm",
+            "docked",
+            "full-width",
+            "top-0",
+            "sticky",
+            "bg-[#f0f3ff]",
+            "flat"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "main",
+          "layout": "block",
+          "classes": [
+            "max-w-7xl",
+            "mx-auto",
+            "px-6",
+            "pt-8",
+            "pb-12"
+          ],
+          "childCount": 18
+        },
+        {
+          "tag": "nav",
+          "layout": "block",
+          "classes": [
+            "md:hidden",
+            "bg-white/80",
+            "backdrop-blur-2xl",
+            "font-['Inter']",
+            "text-[11px]",
+            "font-semibold",
+            "uppercase",
+            "tracking-widest",
+            "docked",
+            "full-width"
+          ],
+          "childCount": 0
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "hover:text-[#4648d4]",
+            "transition-colors",
+            "duration-300"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#",
+          "expectedRoute": "#"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "hover:text-[#4648d4]",
+            "transition-colors",
+            "duration-300"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Ekle",
+          "classes": [
+            "bg-primary",
+            "text-on-primary",
+            "rounded-lg",
+            "px-6",
+            "py-3",
+            "font-semibold",
+            "text-label-md",
+            "hover:bg-primary-container",
+            "transition-colors",
+            "active:shadow-[inset_0_0_0_2px_rgba(199,196,215,0.15)]"
+          ],
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "check",
+          "classes": [
+            "w-8",
+            "h-8",
+            "rounded-full",
+            "ghost-border",
+            "flex",
+            "items-center",
+            "justify-center",
+            "hover:bg-surface-container",
+            "transition-colors",
+            "group/check"
+          ],
+          "icon": "check",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "delete",
+          "classes": [
+            "text-outline-variant",
+            "hover:text-error",
+            "transition-colors",
+            "opacity-0",
+            "group-hover:opacity-100"
+          ],
+          "icon": "delete",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        },
+        {
+          "kind": "button",
+          "label": "check_circle",
+          "classes": [
+            "w-8",
+            "h-8",
+            "rounded-full",
+            "bg-primary",
+            "flex",
+            "items-center",
+            "justify-center",
+            "shadow-[0_2px_12px_rgba(70,72,212,0.2)]"
+          ],
+          "icon": "check_circle",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "smoke-aksiyon",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedRoute": "/notifications",
+          "routeInferred": true,
+          "expectedBehavior": "navigate:/notifications"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Yeni alışkanlık ekle...",
+          "placeholder": "Yeni alışkanlık ekle...",
+          "name": "",
+          "classes": [
+            "flex-1",
+            "bg-transparent",
+            "border-none",
+            "focus:ring-0",
+            "text-body-md",
+            "text-on-surface",
+            "placeholder:text-on-surface-variant",
+            "p-0"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Takip",
+          "href": "#",
+          "classes": [
+            "text-[#4648d4]",
+            "font-bold",
+            "opacity-70",
+            "scale-95",
+            "transition-all"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "href": "#",
+          "classes": [
+            "text-[#464554]",
+            "hover:text-[#4648d4]",
+            "transition-colors",
+            "duration-300"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "href": "#",
+          "classes": [
+            "text-[#464554]",
+            "hover:text-[#4648d4]",
+            "transition-colors",
+            "duration-300"
+          ],
+          "icon": null,
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Takip",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined",
+            "mb-1"
+          ],
+          "icon": "task_alt",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined",
+            "mb-1"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined",
+            "mb-1"
+          ],
+          "icon": "person",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "notifications",
+        "settings",
+        "add_circle",
+        "check",
+        "delete",
+        "check_circle",
+        "task_alt",
+        "analytics",
+        "person"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed": "#e1e0ff",
+        "surface-container-low": "#f0f3ff",
+        "on-tertiary-fixed": "#301400",
+        "outline": "#767586",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "on-background": "#111c2d",
+        "surface-variant": "#d8e3fb",
+        "error-container": "#ffdad6",
+        "on-surface-variant": "#464554",
+        "inverse-surface": "#263143",
+        "on-tertiary": "#ffffff",
+        "on-secondary-fixed-variant": "#5516be",
+        "on-primary-container": "#fffbff",
+        "secondary-fixed": "#e9ddff",
+        "on-primary": "#ffffff",
+        "on-error": "#ffffff",
+        "surface": "#f9f9ff",
+        "on-surface": "#111c2d",
+        "on-tertiary-container": "#fffbff",
+        "surface-bright": "#f9f9ff",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-high": "#dee8ff",
+        "secondary": "#6b38d4",
+        "secondary-fixed-dim": "#d0bcff",
+        "on-primary-fixed": "#07006c",
+        "on-secondary-container": "#fffbff",
+        "primary-container": "#6063ee",
+        "primary-fixed-dim": "#c0c1ff",
+        "primary": "#4648d4",
+        "on-error-container": "#93000a",
+        "inverse-on-surface": "#ecf1ff",
+        "tertiary-fixed": "#ffdcc5",
+        "outline-variant": "#c7c4d7",
+        "surface-container": "#e7eeff",
+        "inverse-primary": "#c0c1ff",
+        "tertiary": "#904900",
+        "on-secondary-fixed": "#23005c",
+        "tertiary-fixed-dim": "#ffb783",
+        "surface-tint": "#494bd6",
+        "surface-container-highest": "#d8e3fb",
+        "surface-dim": "#cfdaf2",
+        "tertiary-container": "#b55d00",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed-variant": "#703700",
+        "on-secondary": "#ffffff",
+        "background": "#f9f9ff",
+        "secondary-container": "#8455ef"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Takip",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "icon": null,
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Takip",
+          "icon": "task_alt",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "icon": "person",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Ekle",
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "check",
+          "icon": "check",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "delete",
+          "icon": "delete",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        },
+        {
+          "kind": "button",
+          "label": "check_circle",
+          "icon": "check_circle",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "smoke-aksiyon",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "input",
+          "label": "Yeni alışkanlık ekle...",
+          "type": "text",
+          "placeholder": "Yeni alışkanlık ekle...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "smoke-aksiyon",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Takip",
+          "icon": null,
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "icon": null,
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "icon": null,
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Takip",
+          "icon": "task_alt",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Analiz",
+          "icon": "analytics",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Profil",
+          "icon": "person",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Ana Sayfa - Dashboard"
+    },
+    "ce5f6375a00649f6bd5257d28a16329d": {
+      "screenId": "ce5f6375a00649f6bd5257d28a16329d",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-[#f9f9ff]",
+            "flex",
+            "justify-between",
+            "items-center",
+            "w-full",
+            "px-8",
+            "py-6",
+            "max-w-7xl",
+            "mx-auto",
+            "border-b"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "main",
+          "layout": "grid",
+          "classes": [
+            "max-w-7xl",
+            "mx-auto",
+            "px-8",
+            "py-12",
+            "grid",
+            "grid-cols-1",
+            "md:grid-cols-3",
+            "gap-8"
+          ],
+          "childCount": 17
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "İptal",
+          "classes": [
+            "flex-1",
+            "bg-transparent",
+            "border-2",
+            "border-outline-variant/30",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "font-label",
+            "text-sm",
+            "font-semibold",
+            "py-3",
+            "px-6",
+            "rounded-lg",
+            "transition-colors",
+            "duration-200"
+          ],
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Sil",
+          "classes": [
+            "flex-1",
+            "bg-error",
+            "text-on-error",
+            "hover:bg-error/90",
+            "font-label",
+            "text-sm",
+            "font-semibold",
+            "py-3",
+            "px-6",
+            "rounded-lg",
+            "shadow-sm",
+            "transition-colors",
+            "duration-200"
+          ],
+          "icon": null,
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "notifications",
+        "settings",
+        "check",
+        "delete"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "primary-fixed": "#e1e0ff",
+        "surface-container-low": "#f0f3ff",
+        "on-tertiary-fixed": "#301400",
+        "outline": "#767586",
+        "on-primary-fixed-variant": "#2f2ebe",
+        "on-background": "#111c2d",
+        "surface-variant": "#d8e3fb",
+        "error-container": "#ffdad6",
+        "on-surface-variant": "#464554",
+        "inverse-surface": "#263143",
+        "on-tertiary": "#ffffff",
+        "on-secondary-fixed-variant": "#5516be",
+        "on-primary-container": "#fffbff",
+        "secondary-fixed": "#e9ddff",
+        "on-primary": "#ffffff",
+        "on-error": "#ffffff",
+        "surface": "#f9f9ff",
+        "on-surface": "#111c2d",
+        "on-tertiary-container": "#fffbff",
+        "surface-bright": "#f9f9ff",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-high": "#dee8ff",
+        "secondary": "#6b38d4",
+        "secondary-fixed-dim": "#d0bcff",
+        "on-primary-fixed": "#07006c",
+        "on-secondary-container": "#fffbff",
+        "primary-container": "#6063ee",
+        "primary-fixed-dim": "#c0c1ff",
+        "primary": "#4648d4",
+        "on-error-container": "#93000a",
+        "inverse-on-surface": "#ecf1ff",
+        "tertiary-fixed": "#ffdcc5",
+        "outline-variant": "#c7c4d7",
+        "surface-container": "#e7eeff",
+        "inverse-primary": "#c0c1ff",
+        "tertiary": "#904900",
+        "on-secondary-fixed": "#23005c",
+        "tertiary-fixed-dim": "#ffb783",
+        "surface-tint": "#494bd6",
+        "surface-container-highest": "#d8e3fb",
+        "surface-dim": "#cfdaf2",
+        "tertiary-container": "#b55d00",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed-variant": "#703700",
+        "on-secondary": "#ffffff",
+        "background": "#f9f9ff",
+        "secondary-container": "#8455ef"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "İptal",
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Sil",
+          "icon": null,
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        }
+      ],
+      "tabBar": [],
+      "title": "Silme Onay Modalı"
+    }
+  }
+}

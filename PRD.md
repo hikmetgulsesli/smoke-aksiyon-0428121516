@@ -1,0 +1,260 @@
+# smoke-aksiyon-0428121516 — Ürün Gereksinim Dokümanı (PRD)
+
+## 1. Genel Bakış
+
+**smoke-aksiyon** tek sayfalı, mikro alışkanlık takip uygulamasıdır. Kullanıcılar günlük küçük alışkanlıklar (bardak su içmek, 10 dk kitap okumak, 5 dk meditasyon vb.) ekleyebilir, her gün tamamlandı olarak işaretleyebilir ve seri/streak takibi yapabilir. Uygulama tamamen tarayıcıda çalışır; sunucu gerektirmez, veriler localStorage'da kalıcıdır.
+
+**Hedef kitle:** Günlük alışkanlıklarını takip etmek isteyen, hafif ve hızlı bir araç arayan kullanıcılar. Türkçe arayüz, mobil öncelikli tasarım.
+
+---
+
+## 2. Hedefler
+
+- Kullanıcı sadece **birkaç dokunuşla** alışkanlık ekleyebilsin (name + optional emoji/icon seçimi)
+- Her alışkanlık için **günlük tamamlama** tek tıkla işaretlenebilsin
+- **Streak/sayaç** görünür şekilde gösterilsin (bugün kaçıncı gün, toplam kaç gün tamamlanmış)
+- Gereksiz alışkanlık **silinebilsin** (onay adımı ile)
+- Tüm veriler **tarayıcıda kalıcı** olsun (localStorage, açılışta otomatik yükle)
+- **Mobil öncelikli responsive** tasarım (320px → 1920px)
+- Stitch tasarım diline sadık, minimal ve temiz bir görsellik
+- Tüm buton ve ikon kontrolleri gerçek işlevsel olsun; dekoratif boş ikon olmasın
+
+---
+
+## 3. Tech Stack Detayı
+
+| Katman      | Seçim                         |
+|-------------|-------------------------------|
+| Framework   | React 18                      |
+| Build       | Vite                          |
+| Dili        | TypeScript                    |
+| Styling     | Tailwind CSS                  |
+| State       | useState + useReducer (hooks) |
+| Storage     | localStorage                  |
+| Routing     | Yok (tek sayfa, SPA)          |
+| Icons       | Lucide React                  |
+| Packager    | npm                           |
+
+---
+
+## 4. Fonksiyonel Gereksinimler
+
+### 4.1 Alışkanlık Ekleme
+- **Giriş alanı:** Metin inputu (placeholder: "Yeni alışkanlık ekle...")
+- **Ekle butonu:** Sağdaki + ikonu veya Enter tuşu
+- **Validation:** Boş string eklenemez; input 1-100 karakter arası
+- **Hata mesajı:** "Alışkanlık adı boş bırakılamaz." — input altında kırmızı renkte
+- **Başarı davranışı:** Input temizlenir, yeni alışkanlık liste başına eklenir (animasyonlu), streak 0'dan başlar
+- **Maksimum:** 20 alışkanlık limiti; 21. eklemede "En fazla 20 alışkanlık ekleyebilirsiniz." uyarısı
+
+### 4.2 Günlük Tamamlama İşaretleme
+- **Davranış:** Her alışkanlık kartında bir onay kutusu / check ikonu
+- **Toggle:** Aynı gün içinde tekrar tıklanırsa işaret kaldırılır
+- **Görsel state:** Tamamlanmış → yeşil arka plan tonu, checkbox dolu, üstü çizili değil (sadece renk değişimi)
+- **Tarih bazlı:** Tamamlanma bilgisi `YYYY-MM-DD` formatında saklanır; her gün 00:00'da sıfırlanmaz, kullanıcı geçmişe dönük görebilir
+- **Bugün kontrolü:** Sadece bugünün tarihi için check yapılabilir; geçmiş günler değiştirilemez
+
+### 4.3 Streak / Sayaç Gösterimi
+- **Streak (seri):** Ardışık gün sayısı — bugün dahil ve dün da dahilse +1, arada 1 gün boşluk olursa 1'e döner
+- **Toplam tamamlanma:** Tüm zamanlarda kaç gün tamamlandığının sayısı
+- **Görsel:** Kartın altında "🔥 5 gün serili" veya "0 gün serili" formatında
+- **Streak 0:** Gri renk, "Henüz başlatılmadı" yerine "0 gün serili"
+- **Streak >= 7:** Altın rengi vurgu
+
+### 4.4 Alışkanlık Silme
+- **Buton:** Her kartın sağ üst köşesinde çöp kutusu ikonu (Lucide: Trash2)
+- **Onay adımı:** Tıklandığında modal açılır: "Bu alışkanlığı silmek istediğinize emin misiniz? [İptal] [Sil]"
+- **Onay sonrası:** Kart animasyonla kaybolur, localStorage güncellenir
+- **İptal:** Modal kapanır, değişiklik yok
+
+### 4.5 localStorage Kalıcılığı
+- **Key:** `smoke-aksiyon-habits`
+- **Format:** JSON string — `{ habits: [...], version: 1 }`
+- **Otomatik kayıt:** Her değişiklikten sonra (ekle, sil, toggle) ivedilikle localStorage'a yaz
+- **Otomatik yükleme:** Uygulama açıldığında (App mount) localStorage'dan oku; yoksa boş array ile başlat
+- **Migration:** `version` alanı ile gelecekte schema değişikliği desteklenebilir
+
+### 4.6 Responsive Tasarım
+- **Mobile (< 640px):** Tek sütun, kartlar tam genişlikte, padding 16px, font boyutları küçük
+- **Tablet (640px–1024px):** 2 sütun grid
+- **Desktop (> 1024px):** 3 sütun grid, max-width 1200px, ortalanmış container
+- **Touch hedefleri:** Tüm butonlar minimum 44×44 px
+
+---
+
+## 5. Veri Modeli
+
+### Entity: Habit
+```typescript
+interface Habit {
+  id: string;          // crypto.randomUUID() ile üretilmiş benzersiz ID
+  name: string;        // Alışkanlık adı, 1-100 karakter
+  createdAt: string;   // ISO 8601 tarih: "2026-04-28T12:00:00.000Z"
+  completedDates: string[]; // ["2026-04-28", "2026-04-27", ...] — YYYY-MM-DD formatında
+}
+```
+
+### Root Storage Schema
+```typescript
+interface AppStorage {
+  habits: Habit[];
+  version: number;     // 1
+}
+```
+
+### Streak Hesaplama
+```typescript
+function calculateStreak(habit: Habit): number {
+  // 1. Bugün dahil mi kontrol et
+  // 2. Dün dahil mi kontrol et
+  // 3. Ardışık zinciri say
+  // Döngüsel değil, sonsuz streak hesaplaması
+}
+```
+
+---
+
+## 6. UI/UX Gereksinimleri
+
+### 6.1 Design System
+
+**Aesthetic:** Minimal, temiz, Stitch diline sadık — beyaz zemin, yumuşak gölgeler, belirgin tipografi
+
+**Renk Paleti:**
+| Rol         | Hex       | Kullanım                              |
+|-------------|-----------|---------------------------------------|
+| Primary     | #6366F1   | Ana butonlar, vurgular, check         |
+| Secondary   | #8B5CF6   | İkincil aksiyonlar, streak >=7        |
+| Background  | #F8FAFC   | Sayfa arka planı                      |
+| Surface     | #FFFFFF   | Kartlar, input alanları                |
+| Text        | #1E293B   | Ana metin                             |
+| TextMuted   | #64748B   | İkincil metin, placeholder            |
+| Border      | #E2E8F0   | Kart kenarları, input border          |
+| Success     | #22C55E   | Tamamlandı işareti, streak >= 7       |
+| Error       | #EF4444   | Hata mesajları, silme onay            |
+| Warning     | #F59E0B   | Limit uyarısı                         |
+| StreakGold  | #F59E0B   | Streak >= 7 gösterimi                 |
+
+**Tipografi:**
+| Rol      | Font                          | Boyut    |
+|----------|-------------------------------|----------|
+| Heading  | Inter, system-ui, sans-serif  | 24-32px  |
+| Body     | Inter, system-ui, sans-serif  | 14-16px  |
+| Caption  | Inter, system-ui, sans-serif  | 12px     |
+
+**Icon Library:** Lucide React (Trash2, Plus, Check, Flame, Calendar)
+
+**Spacing Scale:** 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 px
+
+**Border Radius:** 8px (kartlar), 6px (butonlar), 4px (input)
+
+**Shadow:** `0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)`
+
+### 6.2 Bileşenler
+
+**HabitCard:**
+- Beyaz zemin, 8px radius, subtle shadow
+- Sol: Checkbox (44×44 touch hedefi)
+- Orta: Alışkanlık adı (bold) + streak bilgisi (altında küçük metin)
+- Sağ üst: Sil butonu (Trash2 ikon, 44×44)
+- Tamamlanmış state: Sol border 3px primary, checkbox dolu yeşil
+
+**AddHabitInput:**
+- Tam genişlik input + sağa bitişik "Ekle" butonu
+- Input: placeholder "Yeni alışkanlık ekle...", focus'ta border primary
+- Buton: Primary renk, + ikonu + "Ekle" metni
+
+**DeleteConfirmModal:**
+- Ortalanmış overlay, 400px max genişlik
+- Başlık: "Alışkanlığı Sil"
+- Mesaj: "Bu alışkanlığı silmek istediğinize emin misiniz?"
+- İki buton: [İptal] (ghost/outline), [Sil] (error/danger)
+
+**EmptyState:**
+- Ortada flame ikonu (büyük, soluk)
+- Metin: "Henüz alışkanlık yok"
+- Alt metin: "Yukarıdan ilk alışkanlığını ekle!"
+
+---
+
+## 7. Non-Functional Requirements
+
+### 7.1 Performans
+- İlk yükleme (Vite prod build): < 1.5 saniye
+- Lighthouse Performance Score: >= 95
+- Bundle hedefi: < 100 KB gzipped (React + Tailwind + Lucide)
+- Her işlem (ekle/sil/toggle): < 50ms UI update
+
+### 7.2 Erişilebilirlik (WCAG 2.1 AA)
+- Tüm interactive elementler: `tabIndex={0}`, `role`, `aria-label`
+- Keyboard: Tab navigasyonu, Enter/Space ile toggle
+- Checkbox: `role="checkbox"`, `aria-checked`
+- Modal: `focus-trap`, Escape ile kapatma
+- Renk kontrastı: Tüm metin >= 4.5:1, büyük metin >= 3:1
+- Screen reader: Her kart için "Alışkanlık: [isim], [X] gün serili, [tamamlandı/tamamlanmadı]" announcer
+
+### 7.3 Tarayıcı Desteği
+- Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+- iOS Safari 14+, Android Chrome 90+
+- Responsive: 320px (iPhone SE) → 1920px (desktop)
+
+---
+
+## 8. Proje Yapısı
+
+```
+src/
+├── components/
+│   ├── HabitCard.tsx       # Tek alışkanlık kartı
+│   ├── HabitList.tsx       # Liste render + boş durum
+│   ├── AddHabitForm.tsx    # Ekleme formu
+│   ├── DeleteModal.tsx     # Silme onay modalı
+│   └── EmptyState.tsx      # Henüz alışkanlık yok
+├── hooks/
+│   ├── useHabits.ts        # useReducer + localStorage sync
+│   └── useStreak.ts        # Streak hesaplama hook
+├── types/
+│   └── index.ts            # TypeScript interfaces
+├── utils/
+│   ├── storage.ts          # localStorage okuma/yazma
+│   ├── date.ts             # YYYY-MM-DD format, tarih helpers
+│   └── streak.ts           # Streak hesaplama fonksiyonu
+├── App.tsx                 # Ana layout, state provider
+├── main.tsx                # React DOM mount
+└── index.css               # Tailwind directives + global CSS
+```
+
+---
+
+## 9. Window State (Testing / Dogfood)
+
+```typescript
+window.app = {
+  state: 'idle',         // idle | loading | error
+  habitCount: 0,
+  streaks: {},           // habitId -> streak number
+  storageKey: 'smoke-aksiyon-habits'
+}
+```
+
+---
+
+## 10. Ekranlar
+
+| # | Ekran Adı           | Tür          | Açıklama                                                          |
+|---|---------------------|--------------|-------------------------------------------------------------------|
+| 1 | Ana Sayfa           | dashboard    | Tüm alışkanlıkların listesi, streak gösterimi, ekleme formu     |
+| 2 | Boş Durum (Empty)   | empty-state  | Hiç alışkanlık yokken gösterilen ilham verici ekran              |
+| 3 | Silme Onay Modalı   | modal        | Alışkanlık silmeden önce gösterilen onay dialog kutusu           |
+
+---
+
+## 11. Kısıtlamalar
+
+- **Maksimum 1 story** üretilecek — tüm özellikler tek bir story'de birleştirilecek
+- Tüm özellikler tamamlanana kadar story kabul edilmez
+- localStorage dışında veri kalıcılığı yok (sunucu yok)
+- Kimlik doğrulama / kullanıcı hesabı yok
+- Bildirim / alarm / reminder yok
+- Tema değişikliği yok (tek tema)
+- İstatistik grafiği / tarih görünümü yok
