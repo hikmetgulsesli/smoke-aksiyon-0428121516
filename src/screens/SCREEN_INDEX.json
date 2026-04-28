@@ -1,0 +1,29 @@
+[
+  {
+    "screenId": "c5afb21cfe6f4128b6d1b61b1b2e795e",
+    "title": "Ana Sayfa - Dashboard",
+    "componentName": "AnaSayfaDashboard",
+    "file": "src/screens/AnaSayfaDashboard.tsx",
+    "buttons": 9,
+    "inputs": 1,
+    "links": 6
+  },
+  {
+    "screenId": "499c9daeed634e2b95791b46946674eb",
+    "title": "Boş Durum - Henüz Alışkanlık Yok",
+    "componentName": "BosDurumHenuzAliskanlikYok",
+    "file": "src/screens/BosDurumHenuzAliskanlikYok.tsx",
+    "buttons": 3,
+    "inputs": 1,
+    "links": 6
+  },
+  {
+    "screenId": "ce5f6375a00649f6bd5257d28a16329d",
+    "title": "Silme Onay Modalı",
+    "componentName": "SilmeOnayModali",
+    "file": "src/screens/SilmeOnayModali.tsx",
+    "buttons": 2,
+    "inputs": 0,
+    "links": 0
+  }
+]
