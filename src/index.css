@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "../stitch/design-tokens.css";
 
 :root {
   color-scheme: light;
@@ -11,4 +15,181 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+/* Custom utility classes from Stitch */
+@layer utilities {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-primary-container {
+    background-color: var(--color-primary-container);
+  }
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+  .bg-surface-container-lowest {
+    background-color: var(--color-surface-container-lowest);
+  }
+  .bg-surface-container-low {
+    background-color: var(--color-surface-container-low);
+  }
+  .bg-surface-container {
+    background-color: var(--color-surface-container);
+  }
+  .bg-surface-container-high {
+    background-color: var(--color-surface-container-high);
+  }
+  .bg-surface-dim {
+    background-color: var(--color-surface-dim);
+  }
+  .bg-error {
+    background-color: var(--color-error);
+  }
+  .bg-error-container {
+    background-color: var(--color-error-container);
+  }
+  .bg-secondary-fixed {
+    background-color: var(--color-secondary-fixed);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .bg-secondary-container {
+    background-color: var(--color-secondary-container);
+  }
+  .bg-tertiary-container {
+    background-color: var(--color-tertiary-container);
+  }
+  .bg-inverse-surface {
+    background-color: var(--color-inverse-surface);
+  }
+  .bg-inverse-primary {
+    background-color: var(--color-inverse-primary);
+  }
+  .bg-outline-variant {
+    background-color: var(--color-outline-variant);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-on-primary {
+    color: var(--color-on-primary);
+  }
+  .text-on-primary-container {
+    color: var(--color-on-primary-container);
+  }
+  .text-on-surface {
+    color: var(--color-on-surface);
+  }
+  .text-on-surface-variant {
+    color: var(--color-on-surface-variant);
+  }
+  .text-surface-dim {
+    color: var(--color-surface-dim);
+  }
+  .text-outline {
+    color: var(--color-outline);
+  }
+  .text-outline-variant {
+    color: var(--color-outline-variant);
+  }
+  .text-tertiary {
+    color: var(--color-tertiary);
+  }
+  .text-tertiary-container {
+    color: var(--color-tertiary-container);
+  }
+  .text-error {
+    color: var(--color-error);
+  }
+  .text-on-error {
+    color: var(--color-on-error);
+  }
+  .text-on-error-container {
+    color: var(--color-on-error-container);
+  }
+  .text-secondary-fixed {
+    color: var(--color-secondary-fixed);
+  }
+  .text-inverse-on-surface {
+    color: var(--color-inverse-on-surface);
+  }
+
+  .border-outline-variant {
+    border-color: var(--color-outline-variant);
+  }
+
+  .font-headline {
+    font-family: var(--font-headline), sans-serif;
+  }
+  .font-body {
+    font-family: var(--font-body), sans-serif;
+  }
+  .font-display {
+    font-family: var(--font-display), sans-serif;
+  }
+  .font-label {
+    font-family: var(--font-label), sans-serif;
+  }
+
+  .text-display-md {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .text-display-sm {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .text-headline-md {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .text-body-md {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+  .text-label-md {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+  }
+  .text-label-sm {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+  }
+
+  .ambient-shadow {
+    box-shadow: 0 24px 48px -12px rgba(70, 72, 212, 0.04);
+  }
+  .ambient-shadow-hover {
+    box-shadow: 0 24px 48px -12px rgba(70, 72, 212, 0.08);
+  }
+  .ghost-border {
+    border: 1px solid var(--color-outline-variant);
+  }
+  .fill-icon {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
