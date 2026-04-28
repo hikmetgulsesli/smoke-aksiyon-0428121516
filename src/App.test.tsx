@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import App from './App';
 
 // Mock crypto.randomUUID for predictable IDs
@@ -88,7 +88,7 @@ describe('App', () => {
     expect(screen.getByText('1 gün serili')).toBeInTheDocument();
   });
 
-  it('deletes a habit with confirmation', () => {
+  it('deletes a habit with confirmation', async () => {
     render(<App />);
     fireEvent.change(screen.getByPlaceholderText('Örn: Sabah Koşusu'), { target: { value: 'Silinecek Alışkanlık' } });
     fireEvent.click(screen.getByRole('button', { name: /ekle/i }));
@@ -96,12 +96,12 @@ describe('App', () => {
     const deleteButton = screen.getByLabelText('Sil');
     fireEvent.click(deleteButton);
 
-    expect(screen.getByText('Alışkanlığı Sil')).toBeInTheDocument();
-    expect(screen.getByText(/Silinecek Alışkanlık/)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Alışkanlığı Sil' })).toBeInTheDocument();
+    expect(within(screen.getByRole('dialog')).getByText(/Silinecek Alışkanlık/)).toBeInTheDocument();
 
     fireEvent.click(screen.getByTestId('confirm-delete'));
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(screen.queryByText('Silinecek Alışkanlık')).not.toBeInTheDocument();
     });
   });
@@ -166,7 +166,7 @@ describe('App', () => {
     expect(screen.getByText('3 gün serili')).toBeInTheDocument();
   });
 
-  it('switches to Analiz tab', () => {
+  it('switches to Analiz tab', async () => {
     render(<App />);
     fireEvent.change(screen.getByPlaceholderText('Örn: Sabah Koşusu'), { target: { value: 'Test' } });
     fireEvent.click(screen.getByRole('button', { name: /ekle/i }));
@@ -174,7 +174,7 @@ describe('App', () => {
     const analizButton = screen.getAllByRole('button', { name: /analiz/i })[0];
     fireEvent.click(analizButton);
 
-    expect(screen.getByText('Analiz')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Analiz' })).toBeInTheDocument();
     expect(screen.getByText('Toplam Alışkanlık')).toBeInTheDocument();
   });
 
@@ -183,7 +183,7 @@ describe('App', () => {
     const profilButton = screen.getAllByRole('button', { name: /profil/i })[0];
     fireEvent.click(profilButton);
 
-    expect(screen.getByText('Profil')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Profil' })).toBeInTheDocument();
     expect(screen.getByText('Kullanıcı')).toBeInTheDocument();
   });
 });
