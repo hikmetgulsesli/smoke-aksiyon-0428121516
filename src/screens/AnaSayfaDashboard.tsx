@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react";
-import type { Habit } from "../../types";
+import type { Habit } from "../types";
 
 interface AnaSayfaDashboardProps {
   habits: Habit[];

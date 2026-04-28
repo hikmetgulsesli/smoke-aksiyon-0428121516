@@ -30,12 +30,14 @@ export function SilmeOnayModali({ habitName, isOpen, onConfirm, onCancel }: Silm
             <button
               className="flex-1 bg-transparent border-2 border-outline-variant/30 text-on-surface-variant hover:bg-surface-container-low font-label text-sm font-semibold py-3 px-6 rounded-lg transition-colors duration-200 cursor-pointer"
               onClick={onCancel}
+              data-testid="cancel-delete"
             >
               İptal
             </button>
             <button
               className="flex-1 bg-error text-on-error hover:bg-error/90 font-label text-sm font-semibold py-3 px-6 rounded-lg shadow-sm transition-colors duration-200 cursor-pointer"
               onClick={onConfirm}
+              data-testid="confirm-delete"
             >
               Sil
             </button>
